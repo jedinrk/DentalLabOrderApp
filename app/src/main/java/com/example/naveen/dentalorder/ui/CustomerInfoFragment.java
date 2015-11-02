@@ -29,7 +29,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.naveen.dentalorder.R;
@@ -50,6 +52,8 @@ public class CustomerInfoFragment extends Fragment {
     private TextView mAgeView;
     private static TextView mDateSend;
     private static TextView mDateRequired;
+    private static RadioButton mMale;
+    private static RadioButton mFemale;
 
     public static CustomerInfoFragment create(String key) {
         Bundle args = new Bundle();
@@ -104,6 +108,9 @@ public class CustomerInfoFragment extends Fragment {
                 reqDatePickerDialog(v);
             }
         });
+
+        mMale = (RadioButton) rootView.findViewById(R.id.radio_male);
+        mFemale = (RadioButton) rootView.findViewById(R.id.radio_female);
         return rootView;
     }
 
@@ -138,10 +145,28 @@ public class CustomerInfoFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mDrNameView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1,
+                                          int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                mPage.getData().putString(CustomerInfoPage.DR_NAME_DATA_KEY,
+                        (editable != null) ? editable.toString() : null);
+                mPage.notifyDataChanged();
+            }
+        });
+
         mNameView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1,
-                    int i2) {
+                                          int i2) {
             }
 
             @Override
@@ -170,6 +195,60 @@ public class CustomerInfoFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
                 mPage.getData().putString(CustomerInfoPage.AGE_DATA_KEY,
                         (editable != null) ? editable.toString() : null);
+                mPage.notifyDataChanged();
+            }
+        });
+
+        mDateSend.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1,
+                    int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                mPage.getData().putString(CustomerInfoPage.DATE_SEND_DATA_KEY,
+                        (editable != null) ? editable.toString() : null);
+                mPage.notifyDataChanged();
+            }
+        });
+
+        mDateRequired.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1,
+                    int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                mPage.getData().putString(CustomerInfoPage.DATE_REQ_DATA_KEY,
+                        (editable != null) ? editable.toString() : null);
+                mPage.notifyDataChanged();
+            }
+        });
+
+        mMale.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mPage.getData().putString(CustomerInfoPage.SEX_DATA_KEY,
+                        (isChecked?"Male":"Female"));
+                mPage.notifyDataChanged();
+            }
+        });
+
+        mFemale.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                mPage.getData().putString(CustomerInfoPage.SEX_DATA_KEY,
+                        (isChecked?"Female":"Male"));
                 mPage.notifyDataChanged();
             }
         });

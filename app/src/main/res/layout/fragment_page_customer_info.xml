@@ -53,7 +53,9 @@
                 <EditText android:id="@+id/patient_age"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:saveEnabled="false"  />
+                    android:saveEnabled="false"
+                    android:gravity="center"
+                    android:inputType="number"/>
 
             </LinearLayout>
 
@@ -82,12 +84,14 @@
                     android:layout_weight="1">
 
                     <RadioButton
+                        android:id="@+id/radio_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Male"/>
 
                     <RadioButton
+                        android:id="@+id/radio_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

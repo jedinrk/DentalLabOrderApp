@@ -28,11 +28,12 @@ import java.util.ArrayList;
  * A page asking for a name and an email.
  */
 public class CustomerInfoPage extends Page {
-    public static final String DR_NAME_DATA_KEY = "name";
+    public static final String DR_NAME_DATA_KEY = "drname";
     public static final String NAME_DATA_KEY = "name";
     public static final String AGE_DATA_KEY = "age";
     public static final String DATE_SEND_DATA_KEY = "send";
     public static final String DATE_REQ_DATA_KEY = "required";
+    public static final String SEX_DATA_KEY = "sex";
 
     public CustomerInfoPage(ModelCallbacks callbacks, String title) {
         super(callbacks, title);
@@ -45,11 +46,12 @@ public class CustomerInfoPage extends Page {
 
     @Override
     public void getReviewItems(ArrayList<ReviewItem> dest) {
-        dest.add(new ReviewItem("Dr name", mData.getString(DR_NAME_DATA_KEY), getKey(), -1));
-        dest.add(new ReviewItem("Patient name", mData.getString(NAME_DATA_KEY), getKey(), -1));
-        dest.add(new ReviewItem("Patient age", mData.getString(AGE_DATA_KEY), getKey(), -1));
+        dest.add(new ReviewItem("Surgeon", mData.getString(DR_NAME_DATA_KEY), getKey(), -1));
+        dest.add(new ReviewItem("Patient", mData.getString(NAME_DATA_KEY), getKey(), -1));
+        dest.add(new ReviewItem("Age", mData.getString(AGE_DATA_KEY), getKey(), -1));
         dest.add(new ReviewItem("Send Date", mData.getString(DATE_SEND_DATA_KEY), getKey(), -1));
         dest.add(new ReviewItem("Req Date", mData.getString(DATE_REQ_DATA_KEY), getKey(), -1));
+        dest.add(new ReviewItem("Sex", mData.getString(SEX_DATA_KEY), getKey(), -1));
     }
 
     @Override
