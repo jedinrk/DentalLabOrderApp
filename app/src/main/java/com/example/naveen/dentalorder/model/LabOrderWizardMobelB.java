@@ -12,7 +12,8 @@ public class LabOrderWizardMobelB extends AbstractWizardModel {
 
     @Override
     protected PageList onNewRootPageList() {
-        return new PageList(new MultipleFixedChoicePage(this, "Type of Works")
+        return new PageList(new CustomerInfoPage(this, "Order #1").setRequired(true),
+                new MultipleFixedChoicePage(this, "Type of Works")
                 .setChoices("Crown",
                         "Bridge",
                         "Veneer",
@@ -41,7 +42,6 @@ public class LabOrderWizardMobelB extends AbstractWizardModel {
                                 "Ankylos/xive",
                                 "Biocare",
                                 "Osstem",
-                                "Others").setRequired(true),
-                new CustomerInfoPage(this, "Current Order").setRequired(true));
+                                "Others").setRequired(true));
     }
 }
