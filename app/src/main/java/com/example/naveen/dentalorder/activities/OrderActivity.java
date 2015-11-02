@@ -204,7 +204,7 @@ public class OrderActivity extends AppCompatActivity implements PageFragmentCall
                     : R.string.next);
             mNextButton.setBackgroundResource(R.drawable.selectable_item_background);
             TypedValue v = new TypedValue();
-            getTheme().resolveAttribute(android.R.attr.textAppearanceMedium, v, true);
+            getTheme().resolveAttribute(android.R.attr.textAppearanceSmall, v, true);
             mNextButton.setTextAppearance(this, v.resourceId);
             mNextButton.setEnabled(position != mPagerAdapter.getCutOffPage());
         }

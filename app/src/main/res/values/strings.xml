@@ -18,7 +18,7 @@
     <string name="label_date_required">Date Required</string>
     <string name="hint_email">Optional</string>
 
-    <string name="submit_confirm_message">Place the order with the deli? You will receive an email
+    <string name="submit_confirm_message">Place the order ? You will receive an email
         confirmation.</string>
     <string name="submit_confirm_button">Place order</string>
 
