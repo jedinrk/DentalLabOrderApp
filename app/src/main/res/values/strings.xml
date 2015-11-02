@@ -9,10 +9,14 @@
     <string name="finish">Submit order</string>
     <string name="review">Review</string>
 
-    <string name="label_your_name">Name</string>
-    <string name="label_your_email">Email</string>
-    <string name="hint_your_name">e.g. Larry</string>
-    <string name="hint_your_email">Optional</string>
+    <string name="label_surgeon_name">Surgeon Name</string>
+    <string name="label_patient_name">Patient Name</string>
+    <string name="label_patient_email">Email</string>
+    <string name="label_patient_age">Age</string>
+    <string name="label_patient_sex">Sex</string>
+    <string name="label_date_send">Date Send</string>
+    <string name="label_date_required">Date Required</string>
+    <string name="hint_email">Optional</string>
 
     <string name="submit_confirm_message">Place the order with the deli? You will receive an email
         confirmation.</string>

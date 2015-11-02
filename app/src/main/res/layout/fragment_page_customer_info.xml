@@ -15,25 +15,62 @@
             android:orientation="vertical">
 
             <TextView style="@style/WizardFormLabel"
-                android:text="@string/label_your_name" />
+                android:text="@string/label_surgeon_name" />
 
-            <EditText android:id="@+id/your_name"
+            <EditText android:id="@+id/surgeon_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:saveEnabled="false"
                 android:inputType="textCapWords"
-                android:hint="@string/hint_your_name"
                 android:layout_marginBottom="16dp" />
 
             <TextView style="@style/WizardFormLabel"
-                android:text="@string/label_your_email" />
+                android:text="@string/label_patient_name" />
 
-            <EditText android:id="@+id/your_email"
+            <EditText android:id="@+id/patient_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:saveEnabled="false"
-                android:inputType="textEmailAddress"
-                android:hint="@string/hint_your_email" />
+                android:inputType="textCapWords"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView style="@style/WizardFormLabel"
+                    android:text="@string/label_patient_age" />
+
+                <EditText android:id="@+id/patient_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:saveEnabled="false"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="23"  />
+
+            </LinearLayout>
+
+            <TextView style="@style/WizardFormLabel"
+                android:text="@string/label_date_send" />
+
+            <EditText android:id="@+id/date_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:focusableInTouchMode="false"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView style="@style/WizardFormLabel"
+                android:text="@string/label_date_required" />
+
+            <EditText android:id="@+id/date_required"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:focusableInTouchMode="false"
+                android:layout_marginBottom="16dp"/>
 
         </LinearLayout>
     </ScrollView>
