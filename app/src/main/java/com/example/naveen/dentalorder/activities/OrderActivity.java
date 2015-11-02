@@ -214,7 +214,7 @@ public class OrderActivity extends AppCompatActivity implements PageFragmentCall
 
     @Override
     public AbstractWizardModel onGetModel() {
-        return null;
+        return mWizardModel;
     }
 
     @Override

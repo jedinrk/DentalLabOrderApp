@@ -57,7 +57,7 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_page, container, false);
 
         TextView titleView = (TextView) rootView.findViewById(android.R.id.title);
@@ -86,6 +86,11 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
     }
 
     @Override
+    public void onPageTreeChanged() {
+        onPageDataChanged(null);
+    }
+
+    @Override
     public void onDetach() {
         super.onDetach();
         mCallbacks = null;
@@ -110,11 +115,6 @@ public class ReviewFragment extends ListFragment implements ModelCallbacks {
         if (mReviewAdapter != null) {
             mReviewAdapter.notifyDataSetInvalidated();
         }
-    }
-
-    @Override
-    public void onPageTreeChanged() {
-        onPageDataChanged(null);
     }
 
     @Override
